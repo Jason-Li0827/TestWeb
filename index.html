@@ -10,16 +10,53 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/mansStils.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            * {box-sizing: border-box}
+
+            /* Set height of body and the document to 100% */
+            body, html {
+              height: 100%;
+              margin: 0;
+              font-family: Arial;
+            }
+
+            /* Style tab links */
+            .tablink {
+              background-color: #555;
+              color: white;
+              float: left;
+              border: none;
+              outline: none;
+              cursor: pointer;
+              padding: 14px 16px;
+              font-size: 17px;
+              width: 25%;
+            }
+
+            .tablink:hover {
+              background-color: #777;
+            }
+
+            /* Style the tab content (and add height:100% for full page content) */
+            .tabcontent {
+              color: white;
+              display: none;
+              padding: 100px 20px;
+              height: 100%;
+            }
+            
+            p,h1,li,h3 {
+                color: black;
+            }
+
+        </style>
     </head>
     <body>
-        <div class="w3-top" id='navbar' style="top:-50px">
-            <div class="w3-bar w3-red">
-                <a href="#" class="w3-bar-item w3-button">Home</a>
-                <a href="https://en.wikipedia.org/wiki/Capybara" class="w3-bar-item w3-button" target="_blank">Capybara</a>
-                <a href="https://www.nationalgeographic.com/animals/mammals/facts/cabybara-facts" class="w3-bar-item w3-button" target="_blank">Informācijas</a>
-            </div>
-        </div>
-        <div class="w3-container">
+        <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+        <button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button>
+        <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+        <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+        <div id="Home" class="tabcontent">
             <h1>Datortīkli un to veidi</h1>
             <p>Datortīkls ir datu pārraides sistēma, kas savieno dažādās vietās esošus datorus. Tīklu veido aparatūra un programmatūra, kas nodrošina tīkla aparatūras funkcionēšanu.</p>
             <h1>Datortīklu veidi</h1>
@@ -28,7 +65,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <li>Bezvadu lokālais tīkls</li>
                 <li>Teritoriālais tīkls</li>
             </ul>
-            <img src="src/dators.jfif" alt="bilde">
+            
             <h1>Vairāk informācijas</h1>
             <p>Ledyba shedinja giratina riolu tentacool tauros rattata empoleon larvitar lunatone kangaskhan tentacool forretress! Bronzor fraxure wormadam dewott minun mantine meganium shelmet linoone porygon timburr. Lickilicky bastiodon kabutops zangoose pachirisu, azelf monferno noctowl kirlia. Anorith surskit hoppip, hariyama watchog durant aipom. Dewott slaking weavile solrock dustox gothita numel gyarados zangoose munna beautifly huntail. Turtwig deino reuniclus ninetales?
                 Beautifly of sharpedo lampent kadabra starly minccino tranquill. Gigalith dunsparce wynaut crawdaunt bronzor bouffalant stantler. Staryu ampharos drilbur rhydon jirachi meowth togepi, sunflora spiritomb chimchar hippowdon! Aggron riolu illumise dwebble electrike klink panpour froslass emboar staraptor chatot sandshrew! Squirtle rayquaza corphish exploud teddiursa stunfisk excadrill haxorus mantine walrein. Flareon sandile, pineco loudred hitmontop magnemite. Happiny ninetales hippowdon groudon? Aerodactyl watchog slowpoke azurill wigglytuff manectric rhyhorn bouffalant nosepass. Marshtomp treecko ferroseed metagross shelmet? Riolu bidoof hippopotas sunflora foongus a.
@@ -36,19 +73,44 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <p><a href="https://lv.wikipedia.org/wiki/Datort%C4%ABkls" target="_blank">Papildus lasāmvielas</a></p>
             <p><a href="internets.html">Nākamā lapa</a></p>
         </div>
-        
-    <script>
-    window.onscroll = function() {scrollFunction()};
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("navbar").style.top = "0";
-      } else {
-        document.getElementById("navbar").style.top = "-50px";
-      }
-    }
+        <div id="News" class="tabcontent">
+          <h3>News</h3>
+          <p>Some news this fine day!</p> 
+        </div>
+
+        <div id="Contact" class="tabcontent">
+          <h3>Contact</h3>
+          <p>Get in touch, or swing by for a cup of coffee.</p>
+        </div>
+        
+        <div id="About" class="tabcontent">
+          <h3>About</h3>
+          <p>Who we are and what we do.</p>
+        </div>
+        
+        <div>
+            
+            
+        </div>
+    <script>
+        function openPage(pageName,elmnt,color) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+          }
+          document.getElementById(pageName).style.display = "block";
+          elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
     </script>
-    
     </body>
     <!--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-->
 </html>
