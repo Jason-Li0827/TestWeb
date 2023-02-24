@@ -1,0 +1,18 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Jan 27, 2023, 2:06:02 PM
+    Author     : cli
+*/
+body {
+    background-image: url("../src/back.jpg");
+}
+h1 {
+    color: red;
+}
+
+table, th, td {
+    border:1px solid black;
+}
