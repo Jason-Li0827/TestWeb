@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form id="myform">
+            <p>Aprēķināt cik daudz informācijas var lejupielādēt</p>
+            <p><input type="text" id="t" onfocus="react()">sekundēs, ja interneta ātrums ir 25Mbps</p>
+            <p>Atbilde</p>
+            <p><input type="text" id="atb"><input type="radio" id="kib" onclick="kibf()">KiB<input type="radio" id="kb" onclick="kbf()">KB</p>
+        </form>
+    </body>
+    <script>
+        function kibf(){
+            document.getElementById('atb').value=document.getElementById('t').value*122.0703125*25;
+        }
+        function kbf(){
+            document.getElementById('atb').value=document.getElementById('t').value*125*25;
+        }
+        function react(){
+            document.getElementById('myform').reset();  
+        }
+    </script>
+    
+</html>
